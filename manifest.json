@@ -1,0 +1,16 @@
+{
+	"name": "N yobiko volume setter",
+	"version": "1.0.0",
+	"manifest_version": 2,
+	"description": "N yobiko volume setter",
+	"permissions": [
+		"storage"
+	],
+	"content_scripts": [{
+		"matches": ["https://ww3.tokyo-shoseki.co.jp/*"],
+		"js": [
+			"src/index.js"
+		],
+		"all_frames": true
+	}]
+}
