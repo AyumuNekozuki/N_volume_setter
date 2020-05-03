@@ -3,13 +3,13 @@ const volumeChange = function() {
 		vol: this.volume
 	}
 	chrome.storage.local.set(setting, function() {
-		console.log(setting)
+		console.log(`[volume]Change>>${setting.vol}`)
 	});
 }
 const volumeSetter = function() {
 	chrome.storage.local.get(void 0, function(setting) {
-		console.log(setting)
-		this.document.getElementById("video01").volume = setting.vol || 0.1;
+		console.log(`[volume]Setter>>${setting.vol}`)
+		this.document.getElementById("video01").volume = setting.vol >= 0 ?setting.vol:0.1;
 	});
 }
 window.addEventListener("load", function() {
@@ -19,4 +19,3 @@ window.addEventListener("load", function() {
 		video01.addEventListener("volumechange",volumeChange)
 	}
 })
-
