@@ -1,13 +1,17 @@
 {
 	"name": "N yobiko volume setter",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"manifest_version": 2,
 	"description": "N yobiko volume setter",
 	"permissions": [
 		"storage"
 	],
 	"content_scripts": [{
-		"matches": ["https://ww3.tokyo-shoseki.co.jp/*"],
+		"matches": [
+			"https://ww3.tokyo-shoseki.co.jp/*",
+			"https://www.nnn.ed.nico/*",
+			"https://cdn.fccc.info/*"
+		],
 		"js": [
 			"src/index.js"
 		],
